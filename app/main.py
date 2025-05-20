@@ -12,7 +12,7 @@ app = FastAPI()
 genai.configure(api_key=GEMINI_API_KEY)
 
 datos_financieros = {
-    "ingresos": 1200,
+    "ingresos": 1800,
     "gastos_totales": 1350,
     "gastos_por_categoria": {
         "comida": 450,
@@ -64,13 +64,13 @@ def chat_with_gemini(user_input):
     return response.text
 
 def start_chatbot():
-    print("👋 Hola! Soy Gemini. Escribe 'exit' para finalizar el chat.")
+    print("👋 Hola! Soy Gemini. Escribe 'bye' para finalizar el chat.")
     print("Escribe 'finanzas' para recibir un consejo financiero personalizado.\n")
     
     while True:
         user_input = input("You: ")
         
-        if user_input.lower() == 'exit':
+        if user_input.lower() == 'bye':
             print("Adios! 👋")
             break
         elif user_input.lower() == 'finanzas':
@@ -93,23 +93,6 @@ async def chat(message: str):
         return {"response": response}
     except Exception as e:
         return {"error": str(e)}
-
-@app.post("/recomendar")
-async def recomendar_finanzas():
-    # Estos datos son de prueba, la API de la aplicación deberá servir los datos reales.
-    datos = {
-        "ingresos": 1200,
-        "gastos_totales": 1350,
-        "gastos_por_categoria": {
-            "comida": 450,
-            "transporte": 200,
-            "entretenimiento": 300,
-            "suscripciones": 100,
-            "otros": 300
-        }
-    }
-    respuesta = chat_finanzas_personales(datos)
-    return JSONResponse(content={"recomendacion": respuesta})
 
 if __name__ == "__main__":
     start_chatbot() 
