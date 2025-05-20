@@ -23,10 +23,10 @@ datos_financieros = {
     }
 }
 
-def generar_prompt_finanzas(datos):
-    ingresos = datos["ingresos"]
-    gastos = datos["gastos_totales"]
-    categorias = datos["gastos_por_categoria"]
+def generar_prompt_finanzas(datos_financieros):
+    ingresos = datos_financieros["ingresos"]
+    gastos = datos_financieros["gastos_totales"]
+    categorias = datos_financieros["gastos_por_categoria"]
 
     categorias_str = "\n".join([f"- {k}: ${v}" for k, v in categorias.items()])
     
@@ -51,9 +51,9 @@ Por favor, responde en un solo párrafo breve y claro, usando un lenguaje positi
 """
     return prompt
 
-def chat_finanzas_personales(datos):
+def chat_finanzas_personales(datos_financieros):
     model = genai.GenerativeModel('models/gemini-1.5-flash-latest')
-    prompt = generar_prompt_finanzas(datos)
+    prompt = generar_prompt_finanzas(datos_financieros)
     response = model.generate_content(prompt)
     return response.text
 
