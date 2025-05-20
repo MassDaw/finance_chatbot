@@ -115,7 +115,7 @@ if __name__ == "__main__":
     start_chatbot() 
     # uvicorn.run(app, host="127.0.0.1", port=8000)
 
-#     ✅ ¿Y cómo se conecta al frontend?
+# ¿Y cómo se conecta al frontend?
 # Desde tu frontend (por ejemplo con JavaScript), podés hacer un fetch al 
 # endpoint /recomendar, y mostrar la respuesta de Gemini en la interfaz.
 
@@ -126,7 +126,4 @@ if __name__ == "__main__":
 # Para múltiples usuarios, deberías pasar su user_id y obtener sus datos personalizados.
 
 # Gemini funciona mejor cuando el prompt es muy claro: incluí cantidades, 
-# contexto y lo que esperás que haga.
-
-# Idealmente usá stream=False para respuestas simples, y stream=True si 
-# querés mostrar respuestas en tiempo real (más complejo).
+# contexto y lo que se espera que haga.
