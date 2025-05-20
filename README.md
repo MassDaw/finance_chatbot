@@ -49,7 +49,7 @@ GEMINI_API_KEY=tu_clave_de_api_aquí
 
 - Escribe `finanzas` para recibir un consejo financiero personalizado.
 - Escribe cualquier otra cosa para chatear con Gemini.
-- Escribe `exit` para salir.
+- Escribe `bye` para salir.
 
 ### ✅ API REST (Opcional)
 
