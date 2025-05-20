@@ -13,8 +13,8 @@ Esta aplicación es un chatbot y API REST para dar consejos financieros personal
 
 1. **Clona el repositorio y entra a la carpeta:**
    ```bash
-   git clone https://github.com/MassDaw/chatbot_finance.git
-   cd chatbot_finance/chatbot_api/app
+   git clone https://github.com/MassDaw/finance_chatbot.git
+   cd /chatbot_api/app
 
 # GitHub Copilot
 
@@ -51,7 +51,7 @@ GEMINI_API_KEY=tu_clave_de_api_aquí
 - Escribe cualquier otra cosa para chatear con Gemini.
 - Escribe `exit` para salir.
 
-### ✅ API REST
+### ✅ API REST (Opcional)
 
 Levanta el servidor:
 
@@ -63,7 +63,7 @@ Puedes hacer peticiones a los endpoints definidos (ejemplo: `/recomendar`).
 
 ## 🔐 Seguridad
 
-- La clave de API se guarda en `.env` y **no debe subirse a GitHub**.
+- La clave de API se guarda en `.env`.
 - El archivo `.env` y `config.py` están incluidos en `.gitignore`.
 
 ## 📦 Requisitos
