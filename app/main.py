@@ -64,8 +64,8 @@ def chat_with_gemini(user_input):
     return response.text
 
 def start_chatbot():
-    print("👋 Hola! Soy Gemini. Escribe 'bye' para finalizar el chat.")
-    print("Escribe 'finanzas' para recibir un consejo financiero personalizado.\n")
+    print("👋 ¡Hola, soy tu consejero financiero virtual! Escribe 'finanzas' para recibir un consejo financiero personalizado.")
+    print("Escribe 'bye' para salir.\n")
     
     while True:
         user_input = input("You: ")
@@ -98,15 +98,11 @@ if __name__ == "__main__":
     start_chatbot() 
     # uvicorn.run(app, host="127.0.0.1", port=8000)
 
-# ¿Y cómo se conecta al frontend?
-# Desde tu frontend (por ejemplo con JavaScript), podés hacer un fetch al 
-# endpoint /recomendar, y mostrar la respuesta de Gemini en la interfaz.
+# Conexión al frontend
+# Desde el frontend (JavaScript) un fetch al 
+# endpoint correspondiente, y mostrar la respuesta en la interfaz.
 
-# 🚨 Cosas a tener en cuenta
-# Si los datos provienen de otro endpoint real, podés hacer una llamada HTTP 
-# desde FastAPI con httpx o requests.
+# Para múltiples usuarios, pasar su user_id y obtener sus datos personalizados.
 
-# Para múltiples usuarios, deberías pasar su user_id y obtener sus datos personalizados.
-
-# Gemini funciona mejor cuando el prompt es muy claro: incluí cantidades, 
+# Gemini funciona mejor cuando el prompt es muy claro: cantidades, 
 # contexto y lo que se espera que haga.
